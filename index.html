@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basketball Scoring Board</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oxanium&display=swap">
+</head>
+
+<body>
+    <div id="scoreboard-container">
+        <div id="scoreboard">
+            <div class="section" id="left-section">
+                <div class="row">
+                    <h2 class="score-label" id="home-label"></h2>
+                    <div class="score" id="home-score"></div>
+                </div>
+                <div class="row">
+                    <p class="foul-label"></p>
+                    <div class="foul-counter" id="home-fouls"></div>
+                </div>
+            </div>
+
+            <div class="section" id="middle-section">
+                <div class="row">
+                    <img src="logo-tour.png" alt="Tournament Logo" class="tournament-logo">
+                </div>
+                <div class="row mb-0">
+                    <div class="shoot-clock-label">SHOOT CLOCK</div>
+                    <div class="shot-clock" id="shot-clock"></div>
+                </div>
+                <div class="row">
+                    <div class="game-timer-label">TIMER</div>
+                    <div class="game-timer" id="game-timer"></div>
+                </div>
+                <div class="row">
+                    <div class="sponsor-label">SPONSOR</div>
+                    <div class="sponsor">
+                        <img src="sponsor1.png" alt="Tournament Logo" class="sponsor-logo">
+                        <img src="sponsor2.png" alt="Tournament Logo" class="sponsor-logo small">
+                        <img src="sponsor3.png" alt="Tournament Logo" class="sponsor-logo">
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section" id="right-section">
+                <div class="row">
+                    <h2 class="score-label" id="guest-label">Guest</h2>
+                    <div class="score" id="guest-score"></div>
+                </div>
+                <div class="row">
+                    <p class="foul-label">FOULS</p>
+                    <div class="foul-counter" id="guest-fouls"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="controls-container">
+        <div class="control-section">
+            <div class="control-label">Home Team</div>
+            <button tabindex="-1" class="control-button hide" id="home-score-minus-one">-1</button>
+            <button tabindex="-1" class="control-button" id="home-score-plus-one">+1</button>
+            <button tabindex="-1" class="control-button" id="home-score-plus-two">+2</button>
+            <button tabindex="-1" class="control-button hide" id="home-foul-minus">< F</button>
+            <button tabindex="-1" class="control-button" id="home-foul-plus">F ></button>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="control-section small">
+            <div class="control-label">Shot Clock</div>
+            <button tabindex="-1" class="control-button" id="reset-shot-clock" disabled>Reset (R)</button>
+            <button tabindex="-1" class="control-button" id="pause-shot-clock" disabled>Pause (Space)</button>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="control-section small">
+            <div class="control-label">Game Controls</div>
+            <button tabindex="-1" class="control-button" id="start-game">Start (S)</button>
+            <button tabindex="-1" class="control-button" id="pause-game" disabled>Pause (P)</button>
+            <button tabindex="-1" class="control-button" id="new-game">Reset (N)</button>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="control-section">
+            <div class="control-label">Guest Team</div>
+            <button tabindex="-1" class="control-button hide" id="guest-score-minus-one">-1</button>
+            <button tabindex="-1" class="control-button" id="guest-score-plus-one">+1</button>
+            <button tabindex="-1" class="control-button" id="guest-score-plus-two">+2</button>
+            <button tabindex="-1" class="control-button hide" id="guest-foul-minus">< F</button>
+            <button tabindex="-1" class="control-button" id="guest-foul-plus">F ></button>
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

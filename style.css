@@ -1,0 +1,262 @@
+@font-face{
+    font-family:'digital-clock-font';
+    src: url('digital-dismay.regular.otf');
+   }
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #000; /* Modern black background */
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+button:disabled,
+button[disabled],
+button[disabled]:hover{
+  opacity: .5;
+  background: #555;
+  cursor: auto;
+}
+
+button:active{
+    scale: .9;
+}
+
+.hide {
+    display: none;
+}
+
+#scoreboard-container {
+    display: grid;
+    place-items: center;
+    height: 85vh; /* 100% of viewport height */
+    width: 90vw; /* 100% of viewport width */
+    margin: 0 auto;
+    z-index: 1; /* Ensure the scoreboard is on top */
+}
+
+#scoreboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background: #000; /* Modern black background */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    width: 100%; /* 90% of viewport width */
+    height: 100%; /* 70% of viewport height */
+    z-index: 1; /* Ensure the scoreboard is on top */
+}
+
+#controls-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: #333; /* Dark background for controls */
+    padding: 0px;
+    z-index: 2; /* Ensure the control panel is on top of the scoreboard */
+}
+
+.control-section {
+    scale: .8;
+    text-align: center;
+    width: 30%; /* Occupy 25% of the width initially */
+    padding: 15px 0;
+}
+
+.control-section .small{
+    width: 20% !important;
+}
+
+.control-label {
+    font-size: 14px;
+    color: #fff; /* Label text color */
+    margin-bottom: 5px;
+}
+
+.divider {
+    width: 2px;
+    height: 30px; /* Adjust the height of the divider */
+    background: #555; /* Divider color */
+    margin: 0 15px; /* Adjust the margin as needed */
+}
+
+.control-button {
+    background: #555; /* Button background color */
+    color: #fff; /* Button text color */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.control-button:hover {
+    background: #444; /* Darker background on hover */
+}
+
+/* Media queries for responsiveness */
+@media screen and (max-width: 768px) {
+    #controls-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .control-section {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+
+
+/* Bebas Neue font for headings */
+h2 {
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+
+.section {
+    text-align: center;
+    padding: 4vw; /* 4% of viewport width for padding */
+    color: #fff; /* Modern white text color */
+    border-radius: 15px;
+    transition: background 0.3s;
+    margin-bottom: 4vh; /* 4% of viewport height for margin */
+}
+
+.section:hover {
+    background: #000; /* Darker background on hover */
+}
+
+.row {
+    margin-bottom: 2vh; /* 2% of viewport height for margin */
+}
+
+
+.score,
+.foul-counter,
+.shot-clock,
+.game-timer {
+    font-size: 4vw; /* 4% of viewport width for font size */
+    font-weight: bold;
+    color: #fff; /* Modern white text color */
+    font-family: 'oxanium';
+}
+
+#left-section,
+#right-section,
+#middle-section {
+    width: 100%;
+}
+
+@media screen and (min-width: 600px) {
+    #scoreboard {
+        flex-direction: row;
+    }
+
+    .section {
+        padding: 2vw; /* Adjust padding for larger screens */
+        margin-bottom: 2vh; /* Adjust margin for larger screens */
+    }
+
+    .tournament-logo {
+        max-width: 50vw; /* Adjust max-width for larger screens */
+    }
+
+    .score,
+    .foul-counter,
+    .shot-clock,
+    .game-timer {
+        font-size: 2vw; /* Adjust font size for larger screens */
+    }
+}
+
+.score-label {
+    font-size: 50px;
+    margin-bottom: 10px;
+    letter-spacing: 10px;
+    margin-top: 75px;
+}
+
+.score {
+    font-size: 250px;
+    border: 5px solid #fff;
+    border-radius: 25px;
+}
+
+.foul-label {
+    margin: 25px 0 15px;
+    font-weight: bold;
+}
+
+.foul-counter {
+    margin: 0 150px;
+    font-size: 100px;
+    border: 5px solid #fff;
+    border-radius: 15px;
+}
+
+
+.tournament-logo {
+    /* max-width: 50vw; /* 80% of parent container's width */
+    /* max-height: 20vh; /* 20% of viewport height for maximum height */
+    border-radius: 10px;
+    width: 150px;
+    /* margin-top: -150px; */
+    margin-bottom: 10px;
+}
+
+.game-timer-label, .sponsor-label, .shoot-clock-label {
+    /* margin-top: -50px; */
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.game-timer {
+    margin-top: -20px;
+    font-size: 150px;
+    margin-bottom: 50px;
+}
+
+.sponsor img {
+    width: auto;
+    height: 80px;
+    object-fit: cover;
+    filter: saturate(100%);
+}
+
+img.small{
+    height: 45px;
+    margin: -145px 0 15px 10px;
+}
+
+#middle-section {
+    padding: 0 !important;
+}
+
+.shot-clock {
+    color: red;
+    font-size: 250px;
+    margin-bottom: -35px;
+}
+
+.shot-clock-label{
+    margin-bottom: -25px;
+}
+
+.editable-input {
+    all: unset;
+    width: 10px !important;
+    background-color: #111;
+    width: fit-content !important;
+    display: inline !important;
+    box-sizing: border-box !important;
+    overflow: visible !important;
+    text-overflow: unset;
+}
